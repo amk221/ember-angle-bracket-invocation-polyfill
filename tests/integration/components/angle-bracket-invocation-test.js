@@ -1,4 +1,4 @@
-import { module, test } from 'qunit';
+import { module, test, skip } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, settled } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
@@ -22,7 +22,7 @@ module('Integration | Component | angle-bracket-invocation', function(hooks) {
       assert.dom().hasText('my-helper');
     });
 
-    test('does not error when using with synthetic elements (GH#31)', async function(assert) {
+    skip('does not error when using with synthetic elements (GH#31)', async function(assert) {
       await render(hbs`{{fa-icon "camera"}}`);
 
       assert.dom('i').hasClass('fa-camera');
